@@ -32,7 +32,7 @@ def db():
     conn.row_factory = sqlite3.Row
     return conn
 
-def init_db():
+def init_db(): 
     conn = db()
     conn.executescript("""
     CREATE TABLE IF NOT EXISTS products (
