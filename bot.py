@@ -56,11 +56,7 @@ def init_db():
     count = conn.execute("SELECT COUNT(*) AS c FROM products").fetchone()["c"]
     if count == 0:
         conn.execute(
-            "INSERT INTO products(name,description,price,stock,delivery) VALUES(?,?,?,?,?)",
-            ("Sample Product", "Replace this product from the admin command.", 30, -1, "Your product/download/code goes here.")
-        )
-    conn.commit()
-    conn.close()
+            
 
 def main_kb():
     return InlineKeyboardMarkup(inline_keyboard=[
@@ -91,7 +87,11 @@ async def start(message: Message):
     )
 
 @router.callback_query(F.data == "home")
-async def home(call: CallbackQuery):
+async def "INSERT INTO products(name,description,price,stock,delivery) VALUES(?,?,?,?,?)",
+            ("MEESHO JSON 205 OFF", "", 25, 3, "meesho_account_7508340520.json")
+        )
+    conn.commit()
+    conn.close()home(call: CallbackQuery):
     await call.message.edit_text(
         f"🛍️ <b>{STORE_NAME}</b>\n\nChoose an option below:",
         reply_markup=main_kb()
